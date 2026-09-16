@@ -20,16 +20,16 @@
   --spacing-xl: 2rem;
   
   /* Colors - customize these */
-  --color-bg: hsl(210, 20%, 98%);
-  --color-surface: hsl(0, 0%, 100%);
-  --color-text: hsl(210, 10%, 20%);
-  --color-text-muted: hsl(210, 10%, 50%);
-  --color-accent: hsl(220, 80%, 50%);
-  --color-border: hsla(210, 10%, 20%, 0.1);
+  --color-bg: hsl(332, 100%, 96%);
+  --color-surface: hwb(336 82% 0%);
+  --color-text: hsl(349, 43%, 21%);
+  --color-text-muted: hsl(331, 10%, 50%);
+  --color-accent: hsl(346, 100%, 50%);
+  --color-border: hsla(345, 95%, 62%, 0.661);
   
   /* Typography */
   --font-body: 'Inter', system-ui, sans-serif;
-  --font-display: 'Inter', system-ui, sans-serif; /* Change this */
+  --font-display: "Lucida Console", "Courier New", monospace; /* Change this */
 }
 
 /* Reset */
