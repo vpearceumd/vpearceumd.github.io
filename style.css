@@ -3,9 +3,11 @@
 /* Time to make them attractive, legible, and usable */
 
 :root {
---color-bg: #fe4a49;
+--color-bg: #5E8646;
 --color-surface: #edbf85;
 --color-dark: #4b3034;
+--color-accent: #87E8D8;
+--color-muted: #fe4a49;
 }
 
 body {
@@ -13,17 +15,6 @@ body {
     background-color: var(--color-bg);
     margin: 0;
     padding: 0;
-}
-
-.page-layout {
- grid-template-areas: 
-  "a a "
-  "b b "
-  "c c "
-  "d d "
-  "e e";
-  /* YOUR CODE: grid-template-columns */
-  grid-template-columns: 1fr 1fr;
 }
 
 .rock-salt-regular {
@@ -38,10 +29,15 @@ body {
     border-radius: 75px;
     margin: 10px;
     padding: 5px;
-}
-
-.recipe-intro{
-    display: flex;
+    display: grid;
+    grid-template-areas: 
+    "a a "
+    "b b "
+    "c c "
+    "d d "
+    "e e";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
 }
 
 .recipe-header {
@@ -49,6 +45,15 @@ body {
     border-top-left-radius: 75px;
     border-top-right-radius: 75px;
     text-align: center;
+}
+
+.recipe-intro{
+    grid-area: b;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    width: 100%;
+    background-color: var(--color-accent);
 }
 
 .recipe-title {
@@ -59,14 +64,11 @@ body {
 }
 
 .recipe-meta {
-    grid-area: b;
-    background-color: orange;
-    border: 2px dashed purple;
+    flex: 1;
 }
 
 .recipe-description {
-    background-color: aqua;
-    color: purple;
+
 }
 
 .ingredients-section {
@@ -107,12 +109,33 @@ body {
 }
 
 .recipe-image {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border: 5px solid black;
+    flex-shrink: 0;
 }
 
 * {
     margin: 2px;
     padding: 1px;
+}
+
+@media (max-width: 48rem) {
+  .recipe-container {
+    grid-template-areas: 
+  "a"
+  "b"
+  "c"
+  "d"
+  "e";
+  grid-template-columns: 1fr;
+  }
+  .recipe-intro {
+        flex-direction: column;
+    }
+.recipe-image{
+    width: 500px;
+    height: 500px;
+    flex-shrink: 1;
+}
 }
