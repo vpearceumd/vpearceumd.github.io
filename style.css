@@ -3,16 +3,22 @@
 /* Time to make them attractive, legible, and usable */
 
 :root {
---color-bg: #5E8646;
---color-surface: #edbf85;
---color-dark: #4b3034;
---color-accent: #87E8D8;
---color-muted: #fe4a49;
+--color-red: #FE3434;
+--color-tan: #edbf85;
+--color-brown: #4b3034;
+--color-blue: #87E8D8;
+--color-green: #415E31;
+--color-yellow: #EAB948;
+}
+
+* {
+    margin: 2px;
+    padding: 1px;
 }
 
 body {
     font-family: Times, serif;
-    background-color: var(--color-bg);
+    background-color: var(--color-red);
     margin: 0;
     padding: 0;
 }
@@ -23,10 +29,18 @@ body {
   font-style: normal;
 }
 
+.mynerve-regular {
+  font-family: "Mynerve", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .recipe-container {
-    background-color: var(--color-surface);
-    border: 5px solid var(--color-dark);
-    border-radius: 75px;
+    background-color: var(--color-tan);
+    border: 5px solid var(--color-brown);
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
     margin: 10px;
     padding: 5px;
     display: grid;
@@ -38,6 +52,8 @@ body {
     "e e";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    font-family: "Mynerve", cursive;
+    color: var(--color-brown);
 }
 
 .recipe-header {
@@ -53,11 +69,10 @@ body {
     flex-direction: row;
     flex-wrap:nowrap;
     width: 100%;
-    background-color: var(--color-accent);
+    background-color: var(--color-tan);
 }
 
 .recipe-title {
-    color: var(--color-dark);
     font-size: 40px;
     font-family: "Rock Salt", cursive;
     font-weight: 400;
@@ -73,8 +88,8 @@ body {
 
 .ingredients-section {
     grid-area: c;
-    background-color: pink;
-    border: 5px solid brown;
+    background-color: var(--color-green);
+    color: var(--color-yellow);
 }
 
 .ingredients-list {
@@ -82,30 +97,32 @@ body {
 }
 
 .ingredients-list li {
-    background-color: white;
-    border: 1px solid black;
     margin: 2px;
     padding: 1px;
 }
 
 .instructions-section {
     grid-area: d;
-    background-color: lightgray;
-    border: 3px solid navy;
+    background-color: var(--color-yellow);
+
+}
+
+.instructions-list {
+    margin-left: 15px;
 }
 
 .instruction-step {
-    background-color: beige;
-    border: 2px solid maroon;
     margin: 3px;
 }
 
 .recipe-footer {
     grid-area: e;
-    background-color: violet;
-    border-radius: 75px;
+    margin: -5px;
+    padding: 5px;
     text-align: right;
-    font-size: 6px;
+    font-size: 10px;
+    background-color: var(--color-brown);
+    color: var(--color-tan);
 }
 
 .recipe-image {
@@ -113,11 +130,6 @@ body {
     height: 300px;
     border: 5px solid black;
     flex-shrink: 0;
-}
-
-* {
-    margin: 2px;
-    padding: 1px;
 }
 
 @media (max-width: 48rem) {
@@ -134,8 +146,8 @@ body {
         flex-direction: column;
     }
 .recipe-image{
-    width: 500px;
-    height: 500px;
+    width: auto;
+    height: fit-content;
     flex-shrink: 1;
 }
 }
