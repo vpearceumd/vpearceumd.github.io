@@ -78,8 +78,26 @@ body {
     font-weight: 400;
 }
 
-.recipe-meta {
+.description-and-meta{
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recipe-description {
+    max-width: 95%;
+}
+
+.recipe-meta {
+    display: flex;
+    flex-direction: column;
+     background-color: var(--color-blue);
+     border-radius: 10px;
+     padding: 15px;
+     width: 45%;
+     align-items: center;
 }
 
 .ingredients-section {
