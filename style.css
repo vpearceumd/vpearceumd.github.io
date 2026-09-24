@@ -4,7 +4,7 @@
 
 :root {
 --color-red: #FE3434;
---color-tan: #edbf85;
+--color-tan: #FBE2C6;
 --color-brown: #4b3034;
 --color-blue: #87E8D8;
 --color-green: #415E31;
@@ -83,7 +83,7 @@ body {
     flex: 1;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .recipe-description {
@@ -96,17 +96,30 @@ body {
      background-color: var(--color-blue);
      border-radius: 10px;
      padding: 15px;
-     width: 45%;
-     align-items: center;
+     min-width: 35%;
+     align-items: space-between;
+}
+
+.ingredients-and-instructions{
+    grid-area: c;
+    display: flex;
 }
 
 .ingredients-section {
-    grid-area: c;
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-green);
-    color: var(--color-yellow);
+    color: var(--color-tan);
+    flex: 0;
+    min-width: 35%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    justify-content: center;
 }
 
 .ingredients-list {
+    display: flex;
+    flex-direction: column;
     list-style: none;
 }
 
@@ -116,8 +129,9 @@ body {
 }
 
 .instructions-section {
-    grid-area: d;
     background-color: var(--color-yellow);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .instructions-list {
@@ -130,7 +144,7 @@ body {
 
 
 .recipe-footer {
-    grid-area: e;
+   grid-area: d;
     margin: -5px;
     padding: 5px;
     text-align: right;
@@ -162,5 +176,9 @@ body {
     width: auto;
     height: auto;
     flex-shrink: 1;
+}
+
+.ingredients-and-instructions{
+    flex-direction: column;
 }
 }
