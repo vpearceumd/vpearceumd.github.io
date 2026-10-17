@@ -81,7 +81,7 @@ document.querySelector('#load-await').addEventListener('click', async () => {
      const data = await response.json();
 
      restaurants = data;
-     showStatus('success', 'There are ' + restaurants.length + ' restaurants.')
+     showStatus('success', restaurants.length + ' restaurants loaded.')
      setCountButton(true);
 
    } catch (error) {
