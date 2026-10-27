@@ -125,13 +125,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
         restaurantList.innerHTML = '';
 
         restaurants.forEach((resto, index) => {
-            restaurantList.innerHTML += `<div>${resto.name}</div>`
-            restaurantList.innerHTML += `<div>${resto.cuisine}</div>`
+            restaurantList.innerHTML += 
+            `<div class="restaurant-item">
+                <div class="restaurant-name">${resto.name}</div>
+                <div class="restaurant-cuisine">${resto.cuisine}</div>
+                <div class="restaurant-rating">Rating: ${resto.rating}</div>
+                <div class="restaurant-price">${resto.priceRange}</div>
+            </div>`
+            
         })
         
         
         console.log('Displayed all restaurants using forEach');
-    });
+    
+        });
+        })
     
     // ============================================
     // METHOD 2: filter - GET ITEMS THAT MATCH CRITERIA
@@ -165,10 +173,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
     
         cheapRestaurants.forEach((resto, index) => {
-            filteredList.innerHTML += `<div>${resto.name}</div>`
-        })
+           filteredList.innerHTML += 
+            `<div class="restaurant-item">
+                <div class="restaurant-name">${resto.name}</div>
+                <div class="restaurant-cuisine">${resto.cuisine}</div>
+                <div class="restaurant-rating">Rating: ${resto.rating}</div>
+                <div class="restaurant-price">${resto.priceRange}</div>
+            </div>`
+        });
 
-        })
+        
         
         
         console.log('Showed cheap restaurants using filter');
@@ -203,18 +217,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             })
 
        
-        mappedList.innerHTML = "<ul>"; 
-
-        names.forEach((name) =>{
-
-            mappedList.innerHTML += `<li>${name}</li>`
-
-        })
-
-        mappedList.innerHTML += `</ul>`
+        mappedList.innerHTML = `
+        <ul class="name-list">
+             ${names.map(name => `<li>${name}</li>`).join('')}
+        </ul>`;
 
         console.log('Showed restaurant names using map');
-    });
+    })
     
     // ============================================
     // METHOD 4: find - GET ONE SPECIFIC ITEM
@@ -251,9 +260,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if(bestRestaurant){
 
-                foundItem.innerHTML += `<div>${bestRestaurant.name}</div>`;
-                foundItem.innerHTML += `<div>${bestRestaurant.cuisine}</div>`;
-                foundItem.innerHTML += `<div>${bestRestaurant.rating}</div>`;
+                foundItem.innerHTML += 
+                `<div class="found-restaurant"> 
+                    <div class="restaurant-name">${bestRestaurant.name}</div>
+                    <div>Cuisine: ${bestRestaurant.cuisine}</div>
+                    <div>Rating: ${bestRestaurant.rating}</div>
+                    <div>Price: ${bestRestaurant.priceRange}</div>
+                    <div>Location: ${bestRestaurant.neighborhood}</div>
+                </div>`
+                
+                
             
             }
         
@@ -299,7 +315,7 @@ function demonstrateMethods() {
 // Clear all displays
 function clearAllDisplays() {
     document.querySelector('#restaurant-list').innerHTML = '<p class="placeholder">Click button to display all restaurants</p>';
-    document.querySelector('#filtered-list').innerHTML = '<p class="placeholder">Click button to show only affordable restaurants</p>';
+    document.querySelector('#filtered-list').innerHTML = '<p class="pl2aceholder">Click button to show only affordable restaurants</p>';
     document.querySelector('#mapped-list').innerHTML = '<p class="placeholder">Click button to show just the restaurant names</p>';
     document.querySelector('#found-item').innerHTML = '<p class="placeholder">Click button to find the highest rated restaurant</p>';
     console.log('All displays cleared');
