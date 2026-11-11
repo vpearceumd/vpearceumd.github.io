@@ -24,11 +24,11 @@ function showCharts(data) {
                 <div class="charts-grid">
                     <figure class="chart-figure">
                         <canvas id="chart-one"></canvas>
-                        <figcaption class="chart-summary">Test.</figcaption>
+                        <figcaption class="chart-summary">This is a pie chart that shows 139 restaurants are in compliance with cold holding temperature, while 11 are not.</figcaption>
                     </figure>
                     <figure class="chart-figure">
                         <canvas id="chart-two"></canvas>
-                        <figcaption class="chart-summary">TODO: One sentence saying what this chart shows.</figcaption>
+                        <figcaption class="chart-summary">This is a bar chart that shows, out of the 11 restaurants that aren't compliant with cold holding temperature, there are 10 with critial violations, one listed as facility reopened.</figcaption>
                     </figure>
                 </div>
             `;
