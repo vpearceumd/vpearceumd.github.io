@@ -24,7 +24,7 @@ function showCharts(data) {
                 <div class="charts-grid">
                     <figure class="chart-figure">
                         <canvas id="chart-one"></canvas>
-                        <figcaption class="chart-summary">TODO: One sentence saying what this chart shows.</figcaption>
+                        <figcaption class="chart-summary">Test.</figcaption>
                     </figure>
                     <figure class="chart-figure">
                         <canvas id="chart-two"></canvas>
