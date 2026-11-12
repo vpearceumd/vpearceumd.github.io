@@ -19,13 +19,13 @@ function showTable(data) {
     const tableHTML = data
         .map(
             /*html*/
-            (inspection) => `
+            (restaurant) => `
                 <div>
                     <tr>
-                    <td>${inspection.name}</td>
-                    <td>${orNotListed(inspection.category)}</td>
-                    <td>${inspection.city}</td>
-                    <td>${orNotListed(inspection.inspection_results)}</td>
+                    <td>${restaurant.name}</td>
+                    <td>${orNotListed(restaurant.category)}</td>
+                    <td>${restaurant.city}</td>
+                    <td>${orNotListed(restaurant.inspection_results)}</td>
                     </tr>
                 </div>
             `
@@ -44,6 +44,7 @@ function showTable(data) {
                 </div>
 
                 <table class="restaurant-table">
+                <caption>A table of restaurant names, categories, cities and inspection results.</caption>
                     <tr>
                         <th>Name</th>
                         <th>Category</th>

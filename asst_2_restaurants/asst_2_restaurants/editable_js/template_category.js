@@ -27,12 +27,18 @@ function showCategories(data) {
   return counts;
 }, 
 {}
-);
+); 
 
 const citySort = Object.entries(groupedCities)
-  .map(([city, item]) => `
+  .map(([city, item]) => {
+    const inspectionCompliant = item.filter(
+      restaurant =>
+        restaurant.inspection_results === "Compliant - No Health Risk"
+    ).length;
+
+    return `
     <div>
-      <p class="category-header">${city}</p>
+    <p class="category-header">${city} - Number of compliant: ${inspectionCompliant}</p>
       <ul class="category-items">
 
          ${item.map(restaurant => `
@@ -44,7 +50,8 @@ const citySort = Object.entries(groupedCities)
 
       </ul>
     </div>
-  `)
+   `;
+  })
   .join("");
 
 
